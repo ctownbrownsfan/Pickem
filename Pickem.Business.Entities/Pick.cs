@@ -22,19 +22,19 @@ namespace Pickem.Business.Entities
         {
             get
             {
-                var teamId = -1;
+                var team = -1;
                 if(Score != null && Score.isFinal)
                 {
                     if(Score.HomeTeamScore > Score.AwayTeamScore)
                     {
-                        teamId = HomeTeamId;
+                        team = HomeTeam.TeamId;
                     }
                     else if(Score.HomeTeamScore > Score.AwayTeamScore)
                     {
-                        teamId = AwayTeamId;
+                        team = AwayTeam.TeamId;
                     }
                 }
-                return teamId;
+                return team;
             }
         }
 
