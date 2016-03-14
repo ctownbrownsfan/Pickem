@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Core.Common
 {
-    public class Class1
+    public class Hello
     {
     }
 }
