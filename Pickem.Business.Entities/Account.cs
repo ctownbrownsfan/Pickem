@@ -1,5 +1,6 @@
 ﻿using Core.Common.Contracts;
 using Core.Common.Core;
+using System;
 using System.Runtime.Serialization;
 
 namespace Pickem.Business.Entities
@@ -8,7 +9,7 @@ namespace Pickem.Business.Entities
     public class Account : EntityBase, IIdentifiableEntity, IAccountOwnedEntity
     {
         [DataMember]
-        public int AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         [DataMember]
         public string LoginEmail { get; set; }
@@ -34,7 +35,7 @@ namespace Pickem.Business.Entities
 
         #region IIdentifiableEntity members
 
-        public int Id
+        public Guid Id
         {
             get { return AccountId; }
             set { AccountId = value; }
@@ -44,7 +45,7 @@ namespace Pickem.Business.Entities
 
         #region IAccountOwnedEntity
 
-        public int OwnerAccountId
+        public Guid OwnerAccountId
         {
             get { return AccountId; }
         }

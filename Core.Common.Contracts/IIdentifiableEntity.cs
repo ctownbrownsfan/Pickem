@@ -6,6 +6,6 @@ namespace Core.Common.Contracts
 {
     public interface IIdentifiableEntity
     {
-        int Id { get; set; }
+        Guid Id { get; set; }
     }
 }

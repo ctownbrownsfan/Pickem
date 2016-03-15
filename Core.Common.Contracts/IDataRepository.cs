@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Core.Common.Contracts
 {
@@ -21,7 +22,9 @@ namespace Core.Common.Contracts
         T Update(T entity);
 
         IEnumerable<T> Get();
+        IList<T> SearchFor(Expression<Func<T, bool>> predicate);
 
-        T Get(int id);
+        T Get(Guid id);
     }
+    
 }

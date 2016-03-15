@@ -13,7 +13,7 @@ namespace Pickem.Business.Entities
     public class Team : EntityBase, IIdentifiableEntity, ITeam
     {
         [DataMember]
-        public int TeamId {get;set;}
+        public Guid TeamId {get;set;}
         [DataMember]
         public string Name { get; set; }
         [DataMember]
@@ -23,7 +23,7 @@ namespace Pickem.Business.Entities
 
         #region IIdentifiableEntity members
 
-        public int Id
+        public Guid Id
         {
             get { return TeamId; }
             set { TeamId = value; }

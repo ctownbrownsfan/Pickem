@@ -21,6 +21,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{DC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickem.Business.Entities", "Pickem.Business.Entities\Pickem.Business.Entities.csproj", "{24182277-3BC1-43BB-BBD2-7E67FAE0F1B7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{83C2A9EA-DC11-4E92-9CB6-EE6DA163D351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoTests", "MongoTests\MongoTests.csproj", "{1CB9B748-41B0-4BBC-AEC6-53858B361BDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{24182277-3BC1-43BB-BBD2-7E67FAE0F1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24182277-3BC1-43BB-BBD2-7E67FAE0F1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24182277-3BC1-43BB-BBD2-7E67FAE0F1B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB9B748-41B0-4BBC-AEC6-53858B361BDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB9B748-41B0-4BBC-AEC6-53858B361BDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB9B748-41B0-4BBC-AEC6-53858B361BDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB9B748-41B0-4BBC-AEC6-53858B361BDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +70,6 @@ Global
 		{44DC49F5-36F2-4E7B-B137-B2211007B1EA} = {F8DFA250-1A62-46DC-A8DA-E4F59041867D}
 		{4110150F-381F-4E8D-8C98-F94A051EB951} = {5F3EDC97-2477-43E6-ACC1-6925622DB191}
 		{24182277-3BC1-43BB-BBD2-7E67FAE0F1B7} = {DC2F62C7-3CA7-44C6-80E8-D07B3CB48CF7}
+		{1CB9B748-41B0-4BBC-AEC6-53858B361BDB} = {83C2A9EA-DC11-4E92-9CB6-EE6DA163D351}
 	EndGlobalSection
 EndGlobal

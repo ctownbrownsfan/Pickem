@@ -1,4 +1,5 @@
 ﻿using Core.Common.Contracts;
+using System;
 
 namespace Core.Common.Contracts
 {
@@ -8,6 +9,6 @@ namespace Core.Common.Contracts
         ITeam HomeTeam { get; set; }
         IBoxScore Score { get; set; }
         int WeekPicked { get; set; }
-        int WinningTeamId { get; }
+        Guid WinningTeamId { get; }
     }
 }

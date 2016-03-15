@@ -13,7 +13,7 @@ namespace Pickem.Business.Entities
     public class NFLBoxScore : EntityBase, IIdentifiableEntity, IBoxScore
     {
         [DataMember]
-        public int BoxScoreId { get; set; }
+        public Guid BoxScoreId { get; set; }
 
         [DataMember]
         public int HomeTeamScore { get; set; }
@@ -32,7 +32,7 @@ namespace Pickem.Business.Entities
 
         #region IIdentifiableEntity members
 
-        public int Id
+        public Guid Id
         {
             get { return BoxScoreId; }
             set { BoxScoreId = value; }

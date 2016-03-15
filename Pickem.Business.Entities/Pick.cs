@@ -1,5 +1,6 @@
 ﻿using Core.Common.Contracts;
 using Core.Common.Core;
+using System;
 using System.Runtime.Serialization;
 
 namespace Pickem.Business.Entities
@@ -8,7 +9,7 @@ namespace Pickem.Business.Entities
     public class Pick : EntityBase, IIdentifiableEntity, IPick
     {
         [DataMember]
-        public int PickId { get; set; }
+        public Guid PickId { get; set; }
         [DataMember]
         public ITeam HomeTeam { get; set; }
         [DataMember]
@@ -18,11 +19,11 @@ namespace Pickem.Business.Entities
         [DataMember]
         public IBoxScore Score { get; set; }
         [DataMember]
-        public int WinningTeamId
+        public Guid WinningTeamId
         {
             get
             {
-                var team = -1;
+                Guid team = Guid.Empty;
                 if(Score != null && Score.isFinal)
                 {
                     if(Score.HomeTeamScore > Score.AwayTeamScore)
@@ -40,7 +41,7 @@ namespace Pickem.Business.Entities
 
         #region IIdentifiableEntity members
 
-        public int Id
+        public Guid Id
         {
             get { return PickId; }
             set { PickId = value; }
