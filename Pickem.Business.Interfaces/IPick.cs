@@ -1,6 +1,4 @@
-﻿using Core.Common.Contracts;
-using MongoDB.Bson;
-using System;
+﻿using MongoDB.Bson;
 
 namespace Pickem.Business.Interfaces
 {
