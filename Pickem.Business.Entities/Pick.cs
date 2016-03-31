@@ -1,7 +1,9 @@
 ﻿using Core.Common.Contracts;
 using Core.Common.Core;
+using MongoDB.Bson;
 using System;
 using System.Runtime.Serialization;
+using Pickem.Business.Interfaces;
 
 namespace Pickem.Business.Entities
 {
@@ -17,11 +19,11 @@ namespace Pickem.Business.Entities
         [DataMember]
         public IBoxScore Score { get; set; }
         [DataMember]
-        public Guid WinningTeamId
+        public ObjectId WinningTeamId
         {
             get
             {
-                Guid team = Guid.Empty;
+                ObjectId team = ObjectId.Empty;
                 if(Score != null && Score.isFinal)
                 {
                     if(Score.HomeTeamScore > Score.AwayTeamScore)

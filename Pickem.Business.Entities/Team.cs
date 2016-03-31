@@ -1,11 +1,6 @@
-﻿using Core.Common.Contracts;
-using Core.Common.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
+using MongoDB.Bson;
+using Pickem.Business.Interfaces;
 
 namespace Pickem.Business.Entities
 {
@@ -18,6 +13,7 @@ namespace Pickem.Business.Entities
         public string Abbreviation { get; set; }
         [DataMember]
         public string Logo { get; set; }
-        
+
+        public ObjectId TeamId { get { return Id; } }
     }
 }

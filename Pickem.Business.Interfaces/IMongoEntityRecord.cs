@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson;
 
-namespace Pickem.Business.Entities
+namespace Pickem.Business.Interfaces
 {
     public interface IMongoEntityRecord
     {

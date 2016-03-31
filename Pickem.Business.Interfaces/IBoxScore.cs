@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Common.Contracts
+namespace Pickem.Business.Interfaces
 {
     public interface IBoxScore
     {

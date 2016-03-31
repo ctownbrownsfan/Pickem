@@ -1,7 +1,8 @@
 ﻿using Core.Common.Contracts;
+using MongoDB.Bson;
 using System;
 
-namespace Core.Common.Contracts
+namespace Pickem.Business.Interfaces
 {
     public interface IPick
     {
@@ -9,6 +10,6 @@ namespace Core.Common.Contracts
         ITeam HomeTeam { get; set; }
         IBoxScore Score { get; set; }
         int WeekPicked { get; set; }
-        Guid WinningTeamId { get; }
+        ObjectId WinningTeamId { get; }
     }
 }

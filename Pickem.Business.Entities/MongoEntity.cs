@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using Core.Common.Core;
+using Pickem.Business.Interfaces;
 
 namespace Pickem.Business.Entities
 {
