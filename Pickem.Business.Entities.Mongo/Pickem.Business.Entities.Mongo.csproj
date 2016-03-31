@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4319F3D2-5905-46FF-AD18-18314F4CFCCA}</ProjectGuid>
+    <ProjectGuid>{0ECD155A-2DEF-463D-92B9-195EBE9642BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Core.Common.Contracts</RootNamespace>
-    <AssemblyName>Core.Common.Contracts</AssemblyName>
+    <RootNamespace>Pickem.Business.Entities.Mongo</RootNamespace>
+    <AssemblyName>Pickem.Business.Entities.Mongo</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,11 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAccountOwnedEntity.cs" />
-    <Compile Include="IDataRepository.cs" />
-    <Compile Include="IDataRepositoryFactory.cs" />
-    <Compile Include="IDirtyCapable.cs" />
-    <Compile Include="IIdentifiableEntity.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="MongoEntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

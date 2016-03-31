@@ -10,10 +10,8 @@ using System.Threading.Tasks;
 namespace Pickem.Business.Entities
 {
     [DataContract]
-    public class NFLBoxScore : EntityBase, IIdentifiableEntity, IBoxScore
+    public class NFLBoxScore : MongoEntity, IBoxScore
     {
-        [DataMember]
-        public Guid BoxScoreId { get; set; }
 
         [DataMember]
         public int HomeTeamScore { get; set; }
@@ -29,14 +27,6 @@ namespace Pickem.Business.Entities
                 return TimeLeft == 0;
             }
         }
-
-        #region IIdentifiableEntity members
-
-        public Guid Id
-        {
-            get { return BoxScoreId; }
-            set { BoxScoreId = value; }
-        }
-        #endregion
+        
     }
 }

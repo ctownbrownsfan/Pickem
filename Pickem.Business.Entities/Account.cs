@@ -6,11 +6,8 @@ using System.Runtime.Serialization;
 namespace Pickem.Business.Entities
 {
     [DataContract]
-    public class Account : EntityBase, IIdentifiableEntity, IAccountOwnedEntity
+    public class Account : MongoEntity
     {
-        [DataMember]
-        public Guid AccountId { get; set; }
-
         [DataMember]
         public string LoginEmail { get; set; }
 
@@ -31,25 +28,7 @@ namespace Pickem.Business.Entities
 
         [DataMember]
         public string ZipCode { get; set; }
-
-
-        #region IIdentifiableEntity members
-
-        public Guid Id
-        {
-            get { return AccountId; }
-            set { AccountId = value; }
-        }
-
-        #endregion
-
-        #region IAccountOwnedEntity
-
-        public Guid OwnerAccountId
-        {
-            get { return AccountId; }
-        }
-
-        #endregion
+        
+        
     }
 }

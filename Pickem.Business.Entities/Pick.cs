@@ -6,10 +6,8 @@ using System.Runtime.Serialization;
 namespace Pickem.Business.Entities
 {
     [DataContract]
-    public class Pick : EntityBase, IIdentifiableEntity, IPick
+    public class Pick : MongoEntity, IPick
     {
-        [DataMember]
-        public Guid PickId { get; set; }
         [DataMember]
         public ITeam HomeTeam { get; set; }
         [DataMember]
@@ -38,15 +36,5 @@ namespace Pickem.Business.Entities
                 return team;
             }
         }
-
-        #region IIdentifiableEntity members
-
-        public Guid Id
-        {
-            get { return PickId; }
-            set { PickId = value; }
-        }
-
-        #endregion
     }
 }
