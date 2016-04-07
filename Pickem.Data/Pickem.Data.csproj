@@ -64,6 +64,10 @@
       <Project>{4319f3d2-5905-46ff-ad18-18314f4cfcca}</Project>
       <Name>Core.Common.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pickem.Business.Interfaces\Pickem.Business.Interfaces.csproj">
+      <Project>{cc77eb93-67f3-448f-a7bf-8358ecff11e3}</Project>
+      <Name>Pickem.Business.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

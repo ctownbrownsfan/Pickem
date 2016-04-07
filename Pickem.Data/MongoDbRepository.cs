@@ -1,6 +1,7 @@
 ﻿using Core.Common.Contracts;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using Pickem.Business.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Pickem.Data
 {
-    public class MongoDbRepository<T> : IDataRepository<T> where T : class , IIdentifiableEntity, new()
+    public class MongoDbRepository<T> : IMongoDbRepository<T> where T : class , IMongoEntityRecord, new()
     {
         private IMongoDatabase database;
         private IMongoCollection<T> collection;
@@ -24,13 +25,33 @@ namespace Pickem.Data
 
         public bool Insert(T entity)
         {
-            entity.Id = Guid.NewGuid();
+            entity.Id = ObjectId.Empty;
             try
             {
                 collection.InsertOne(entity);
                 return true;
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Remove(T entity)
+        {
+            if (entity != null)
+            {
+                return Remove(entity.Id);
+            }
+            return false;
+        }
+        public bool Remove(ObjectId id)
+        {
+            try
+            {
+                collection.DeleteOne(f => f.Id == id);
+                return true;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -43,19 +64,7 @@ namespace Pickem.Data
             return collection.UpdateOne<T>(f => f.Id == entity.Id, entity.ToBsonDocument()).ModifiedCount > 0;
         }
 
-        public bool Delete(T entity)
-        {
-            try {
-                collection.DeleteOne(f => f.Id == entity.Id);
-                return true;
-            }
-            catch(Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public IList<T>
+        public IEnumerable<T>
             SearchFor(Expression<Func<T, bool>> predicate)
         {
             return collection
@@ -64,16 +73,17 @@ namespace Pickem.Data
                         .ToList();
         }
 
-        public IList<T> GetAll()
+        public IEnumerable<T> GetAll()
         {
             return collection.Find(new BsonDocument()).ToList<T>();
         }
 
-        public T GetById(Guid id)
+        public T GetById(ObjectId id)
         {
             return (T)collection.Find(f=>f.Id == id);
         }
-
+        
+    
         #region Private Helper Methods
         private void GetDatabase()
         {
@@ -103,35 +113,6 @@ namespace Pickem.Data
                 .GetCollection<T>(typeof(T).Name);
         }
 
-        public T Add(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Remove(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        T IDataRepository<T>.Update(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
         #endregion
     }
 }
